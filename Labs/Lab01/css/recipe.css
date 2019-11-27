@@ -1,0 +1,29 @@
+body{
+    background-image: url(../resources/silverware.jpg);
+    background-attachment: fixed;
+}
+
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 175%;
+    text-decoration: underline;
+    color: rgb(176, 184, 104);
+    background-color:rgb(230, 230, 230);
+}
+
+#main > div:nth-child(1) > div.title{
+    text-align: center;
+    text-decoration: none;
+    font-weight: unset;
+}
+
+.img{
+    display: block;
+    width: 25%;
+}
+
+.section{
+    border-bottom:  5pt solid rgb(194, 194, 194); 
+    padding: 1%;
+}
