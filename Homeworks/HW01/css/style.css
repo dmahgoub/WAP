@@ -27,3 +27,7 @@ body{
     border-bottom:  5pt solid rgb(194, 194, 194); 
     padding: 1%;
 }
+
+.bold{
+    font-weight: bold;
+}
