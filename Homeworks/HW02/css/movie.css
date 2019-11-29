@@ -39,6 +39,7 @@ h2{
     margin-right: auto;
     border: 4px solid gray;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .movieReview{
@@ -47,13 +48,17 @@ h2{
 }
 
 .rating{
-    float: left;
     background-image: url(../resources/rbg.png);
     border-top-left-radius: 10pt;
     width:  550px;
     color: red;
     font-weight: bold;
     font-size: 48pt;
+}
+
+.column{
+    width: 225px;
+    float: left;
 }
 
 .rating > img{
@@ -64,26 +69,32 @@ h2{
 .review{
     float: left;
     width: 47%;
-    margin: 1%;
+    margin: 2% 1%;
+}
 
+
+
+.critic{
+    margin-top: 10px;
 }
 
 .reviewContent {
     border: 2px solid gray;
     border-radius: 10px ;
     background-color: #E8DC9B;
+    
     padding: 8px;
     font-size:  8pt;
     font-weight: bold;
 }
 
-.reviewContent > img, .critic > img{
+.reviewContent   img, .critic  img{
     float: left;
     padding-right: 5px;
 }
 
 .critic{
-    padding: 5px;
+    margin-bottom: 10px;
     
 }
 .company{
