@@ -54,35 +54,37 @@ h2{
     color: red;
     font-weight: bold;
     font-size: 48pt;
+    height: 83px;
 }
 
 .column{
-    width: 225px;
+    width: 47%;
     float: left;
+    margin-left: 2%;
 }
 
 .rating > img{
+    float: left;
     border-top-left-radius: 15px;
     vertical-align: text-bottom;
 }
 
 .review{
     float: left;
-    width: 47%;
     margin: 2% 1%;
 }
-
-
 
 .critic{
     margin-top: 10px;
 }
 
 .reviewContent {
+    width: 220px;
+    margin: 2%;
     border: 2px solid gray;
     border-radius: 10px ;
     background-color: #E8DC9B;
-    
+    overflow: hidden;
     padding: 8px;
     font-size:  8pt;
     font-weight: bold;
@@ -137,8 +139,12 @@ h2{
     padding: 5px;
 }
 
-.validation > div {
-    float: right;
+.validation{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    text-align: right;
 }
 
 
