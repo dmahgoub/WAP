@@ -84,13 +84,13 @@ h2{
 
 .critic{
     padding: 5px;
+    
+}
+.company{
     font-style: italic;
 }
-
 .overview{
-    float: left;
-    position: absolute;
-
+    float: right;
     background-color: #A2B964;
     width: 250px;
     font-size: 8pt;
@@ -101,7 +101,33 @@ h2{
 
 }
 
+.info{
+    margin-left: 10pt;
+    padding:5pt;
+    padding-left: 10pt;
+    list-style: none;
+}
+
+.infoTitle{
+    font-weight: bold;
+}
+
+.infoList{
+    list-style: none;
+    margin-left: 10pt;
+}
+
+.pages{
+    background-color: #A2B964;
+    text-align: center;
+}
+
+.validation > div {
+    float: right;
+}
+
 
 .clear{
     clear: both;
 }
+
