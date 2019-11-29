@@ -33,6 +33,7 @@ h2{
 }
 
 .container {
+    
     overflow: auto;
     width: 800px;
     margin-left: auto;
@@ -42,13 +43,14 @@ h2{
 }
 
 .movieReview{
+    float: left;
     width:  550px;
 }
 
 .rating{
     float: left;
     background-image: url(../resources/rbg.png);
-    background-repeat: repeat;
+    width:  550px;
     color: red;
     font-weight: bold;
     font-size: 48pt;
@@ -59,26 +61,47 @@ h2{
     vertical-align: text-bottom;
 }
 
+.review{
+    float: left;
+    width: 47%;
+    margin: 1%;
+
+}
+
+.reviewContent {
+    border: 2px solid gray;
+    border-radius: 10px ;
+    background-color: #E8DC9B;
+    padding: 8px;
+    font-size:  8pt;
+    font-weight: bold;
+}
+
+.reviewContent > img, .critic > img{
+    float: left;
+    padding-right: 5px;
+}
+
+.critic{
+    padding: 5px;
+    font-style: italic;
+}
+
 .overview{
-    float: right;
+    float: left;
     position: absolute;
-    right: -5px;
+
     background-color: #A2B964;
+    width: 250px;
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .overview > img{
     border-top-right-radius: 15px;
 
 }
-.review{
-    float: left;
-    width: 47%;
-    border-spacing: 2%;
-}
 
-.contai{
-    overflow: auto;
-}
 
-li{
-    word-wrap: break-word;
+.clear{
+    clear: both;
 }
