@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Retrieve Grade</title>
+</head>
+
+<body>
+    <form action="" method="post">
+
+        <h1>Retrieve your grade</h1>
+
+        <fieldset>
+            <div>
+                <label for="name" class="left">Name: </label>
+                <input type="text" name="name" id="name" class="column">
+            </div>
+            <div>
+                <label for="student-id" class="left">Student ID: </label>
+                <input type="text" name="id" id="student-id" class="column">
+            </div>
+            <div>
+                <label for="assignment" class="left">Assignment: </label>
+                <select name="assignment" id="assignment" class="column">
+                    <option value="CS390">FPP</option>
+                    <option value="CS401">MPP</option>
+                    <option value="CS435">ALG</option>
+                    <option value="CS472">WAP</option>
+                </select>
+            </div>
+            <div>
+                <label for="entry" class="left">Entry: </label>
+                <input type="radio" name="entry" id="may">May 2019
+                <input type="radio" name="entry" id="aug">August 2019
+            </div>
+            <div>
+                <input type="checkbox" name="checkbox" id="confirm">I am not lying and really only looking up my own grade.
+            </div>
+            <div>
+                <input type="submit" value="Get Grade!">
+            </div>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
