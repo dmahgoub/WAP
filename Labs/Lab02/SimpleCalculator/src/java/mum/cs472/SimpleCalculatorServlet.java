@@ -32,12 +32,28 @@ public class SimpleCalculatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Integer sum = 0;
+        Integer mul = 0;
         String s1 = request.getParameter("s1");
         String s2 = request.getParameter("s2");
-        int sum = Integer.parseInt(s1) + Integer.parseInt(s2);
+        if ((!s1.isEmpty() || !s1.equals("")) && (!s2.isEmpty() || !s2.equals(""))) {
+            sum = Integer.parseInt(s1) + Integer.parseInt(s2);
+        }
         String m1 = request.getParameter("m1");
         String m2 = request.getParameter("m2");
-        int mul = Integer.parseInt(m1) * Integer.parseInt(m2);
+        if ((!m1.isEmpty() || !m1.equals("")) && (!m2.isEmpty() || !m2.equals(""))) {
+            mul = Integer.parseInt(m1) * Integer.parseInt(m2);
+        }
+        String sumResult = "";
+        String mulResult = "";
+        if (sum == 0) {
+            sumResult = "<div>" + s1 + " + " + s2 + " = " + sum + "</div>";
+        }
+        if (mul == 0) {
+            mulResult = "<div>" + m1 + " * " + m2 + " = " + mul + "</div>";
+        }
+
         PrintWriter out = response.getWriter();
         out.print("<html>\n"
                 + "    <head>        \n"
@@ -46,10 +62,11 @@ public class SimpleCalculatorServlet extends HttpServlet {
                 + "        <title>Calculator</title>\n"
                 + "    </head>\n"
                 + "    <body>\n"
-                + "            <div>" + s1 + " + " + s2 + " = " + sum + "</div>"
-                + "            <div>" + m1 + " * " + m2 + " = " + mul + "</div>"
+                + sumResult
+                + mulResult
                 + "    </body>\n"
                 + "</html>\n");
+
     }
 
     /**
@@ -64,12 +81,27 @@ public class SimpleCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Integer sum = 0;
+        Integer mul = 0;
         String s1 = request.getParameter("s1");
         String s2 = request.getParameter("s2");
-        int sum = Integer.parseInt(s1) + Integer.parseInt(s2);
+        if ((!s1.isEmpty() || !s1.equals("")) && (!s2.isEmpty() || !s2.equals(""))) {
+            sum = Integer.parseInt(s1) + Integer.parseInt(s2);
+        }
         String m1 = request.getParameter("m1");
         String m2 = request.getParameter("m2");
-        int mul = Integer.parseInt(m1) * Integer.parseInt(m2);
+        if ((!m1.isEmpty() || !m1.equals("")) && (!m2.isEmpty() || !m2.equals(""))) {
+            mul = Integer.parseInt(m1) * Integer.parseInt(m2);
+        }
+        String sumResult = "";
+        String mulResult = "";
+        if (sum != 0) {
+            sumResult = "<div>" + s1 + " + " + s2 + " = " + sum + "</div>";
+        }
+        if (mul != 0) {
+            mulResult = "<div>" + m1 + " * " + m2 + " = " + mul + "</div>";
+        }
+
         PrintWriter out = response.getWriter();
         out.print("<html>\n"
                 + "    <head>        \n"
@@ -78,10 +110,11 @@ public class SimpleCalculatorServlet extends HttpServlet {
                 + "        <title>Calculator</title>\n"
                 + "    </head>\n"
                 + "    <body>\n"
-                + "            <div>" + s1 + " + " + s2 + " = " + sum + "</div>"
-                + "            <div>" + m1 + " * " + m2 + " = " + mul + "</div>"
+                + sumResult
+                + mulResult
                 + "    </body>\n"
                 + "</html>\n");
+
     }
 
     /**

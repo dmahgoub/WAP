@@ -29,7 +29,7 @@ public class QuizServlet extends HttpServlet {
         "1, 2, 4, 8, 16"
     };
     private static int[] answers = {9, 8, 36, 13, 32};
-
+    private static Quiz q = new Quiz(questions, answers);
     private static int index = 0;
 
     /**
@@ -47,16 +47,20 @@ public class QuizServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
 
+        session.setAttribute("quiz", q);
         try {
-            Quiz q = new Quiz(questions, answers);
-            session.setAttribute("quiz", q);
             String answer = request.getParameter("answer");
-            if (answer != null) {
+            String wrongAnswer = "";
+            if (answer != null && !answer.isEmpty()) {
                 Integer parsedAnswer = Integer.parseInt(answer);
-
-                if (!q.checkAnswer(parsedAnswer, ++index)) {
-                    throw new Exception("Wrong Answer");
+                if (q.checkAnswer(parsedAnswer, index)) {
+                    index++;
+                } else {
+                    wrongAnswer = "<p>Try Again</p>";
                 }
+            }
+            if (index == q.getAnswers().length) {
+                index = 0;
             }
             try (PrintWriter out = response.getWriter()) {
                 out.print("<!DOCTYPE html>\n"
@@ -82,6 +86,7 @@ public class QuizServlet extends HttpServlet {
                         + "                    Your answer: <input type=\"text\" name=\"answer\" id=\"answer\">\n"
                         + "                </p>\n"
                         + "                <input type=\"submit\" value=\"Submit\">\n"
+                        + wrongAnswer
                         + "            </fieldset>\n"
                         + "        </form>\n"
                         + "    </div>\n"
@@ -91,9 +96,6 @@ public class QuizServlet extends HttpServlet {
                         + "</html>");
             }
         } catch (Exception e) {
-            try (PrintWriter out = response.getWriter()) {
-                out.print("Try Again: " + e.getMessage());
-            }
         }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
