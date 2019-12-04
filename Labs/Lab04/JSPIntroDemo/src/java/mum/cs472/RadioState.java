@@ -35,9 +35,4 @@ public class RadioState {
         this.yesCheck = yesCheck;
     }
 
-    public void resetChecks() {
-        yesCheck = "";
-        noCheck = "";
-    }
-
 }
