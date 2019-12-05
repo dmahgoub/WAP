@@ -17,23 +17,16 @@
     <body>
         <form method='post' action='ChooseServlet'>
             <p>Is JSP cool?</p>
-            <%! int i = 0;%>
-            <%
-                
-            %>
-
-            <input type='radio' value='1' name='radioJSPCool' ${ choices.yesCheck }><span>Yes</span><br/>
-            <input type='radio' value='0' name='radioJSPCool' ${ choices.noCheck }><span>No</span><br/>
+            <input type='radio' value='1' name='radioJSPCool' ${ radioJSPCool.getYesCheck }><span>Yes</span><br/>
+            <input type='radio' value='0' name='radioJSPCool' ${ radioJSPCool.getNoCheck }><span>No</span><br/>
             <input type='submit' name='btnSubmit' value='Submit'/>
-            <% i++; %>
             <p>Is JSF way cool?</p>
-            <input type='radio' value='1' name='JSFwayCool' ${ choices.yesCheck }><span>Yes</span><br/>
-            <input type='radio' value='0' name='JSFwayCool' ${ choices.noCheck }><span>No</span><br/>
+            <input type='radio' value='1' name='JSFwayCool' ${ JSFwayCool.getYesCheck }><span>Yes</span><br/>
+            <input type='radio' value='0' name='JSFwayCool' ${ JSFwayCool.getNoCheck }><span>No</span><br/>
             <input type='submit' name='btnSubmit' value='Submit'/>
-            <% i++;%>
             <p>Is the moon made of cheese?</p>
-            <input type='radio' value='1' name='moonCheese' ${ choices.yesCheck }><span>Yes</span><br/>
-            <input type='radio' value='0' name='moonCheese' ${ choices.noCheck }><span>No</span><br/>
+            <input type='radio' value='1' name='moonCheese' ${ moonCheese.getYesCheck }><span>Yes</span><br/>
+            <input type='radio' value='0' name='moonCheese' ${ moonCheese.getNoCheck }><span>No</span><br/>
             <input type='submit' name='btnSubmit' value='Submit'/>
         </form>
     </body>

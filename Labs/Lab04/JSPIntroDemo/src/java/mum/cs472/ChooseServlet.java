@@ -24,22 +24,21 @@ public class ChooseServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.setAttribute("choices", choices);
-        String rButtons[] = {
-            request.getParameter("radioJSPCool"),
-            request.getParameter("JSFwayCool"),
-            request.getParameter("moonCheese")
-        };
-        for (int i = 0; i < rButtons.length; i++) {
-            String choice = rButtons[i];
-            choices[i] = new RadioState();
-            if (choice != null) {
-                if (choice.equals("1")) {
-                    choices[i].setYesCheck("checked");
-                } else if(choice.equals("0")){
-                    choices[i].setNoCheck("checked");
+		
+        String choices[] = { "radioJSPCool", "JSFwayCool", "moonCheese" };
+        for(String choice : choices) {
+            String choiceValue = request.getParameter(choice);
+            RadioState radioState = new RadioState();
+            if (choiceValue != null) {
+                if (choiceValue.equals("1")) {
+                    radioState.setYesCheck("checked");
+                } else {
+                    radioState.setNoCheck("checked");
                 }
-                System.out.println("choice= " + choice);
+				session.setAttribute(choice, radioState);
+                System.out.println("choice= " + choiceValue);
             } else {
+				s.removeAttribute(choice);
                 System.out.println("No choice made");
             }
         }
