@@ -12,11 +12,13 @@ package mum.cs472;
 public class Quiz {
 
     private String[] questions;
+    private String[] hints;
     private int[] answers;
     private int score;
 
-    public Quiz(String[] questions, int[] answers) {
+    public Quiz(String[] questions, int[] answers, String[] hints) {
         this.questions = questions;
+        this.hints = hints;
         this.answers = answers;
         score = 0;
     }
@@ -24,13 +26,13 @@ public class Quiz {
     public String getQuestion(int i) {
         return questions[i];
     }
+    
+        public String getHint(int i) {
+        return hints[i];
+    }
 
     public int[] getAnswers() {
         return answers;
-    }
-
-    public int getAnswers(int i) {
-        return answers[i];
     }
 
     public int getScore() {
@@ -42,7 +44,7 @@ public class Quiz {
             return false;
         }
         if (answer == answers[index]) {
-            ++score;
+            score = score + 10;
         }
         return answer == answers[index];
     }
