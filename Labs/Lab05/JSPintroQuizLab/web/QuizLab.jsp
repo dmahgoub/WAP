@@ -13,39 +13,41 @@
         <title>JSP Quiz</title>
     </head>
     <body>
-        <%! String[] questions = {
+        <%!
+            static private String[] questions = {
                 "3, 1, 4, 1, 5",
                 "1, 1, 2, 3, 5",
                 "1, 4, 9, 16, 25",
                 "2, 3, 5, 7, 11",
                 "1, 2, 4, 8, 16"
             };
-            int[] answers = {9, 8, 36, 13, 32};
-            int index = 0;
-            Quiz q = new Quiz(questions, answers);%>
+            static private int[] answers = {9, 8, 36, 13, 32};
+            static private int index = 0;
+            static private Quiz q = new Quiz(questions, answers);%>
 
         <%
-                session.setAttribute("quiz", q);
-                String answer = request.getParameter("answer");
-                String wrongAnswer = "";
-                if (answer != null && !answer.isEmpty()) {
-                    if (q.checkAnswer(Integer.parseInt(answer), index)) {
-                        index++;
-                    } else {
-                        wrongAnswer = "Try Again";
-                    }
+            session.setAttribute("quiz", q);
+            String answer = request.getParameter("answer");
+            String wrongAnswer = "";
+            if (answer != null && !answer.isEmpty()) {
+                if (q.checkAnswer(Integer.parseInt(answer), index)) {
+                    index++;
+                } else {
+                    wrongAnswer = "Try Again";
                 }
-            }%>
+            }
+        %>
         <header>
             <h1>The Number Quiz</h1>
-            <p>Your score is ${ q.score }</p>
+            <p>Your score is ${ q.score() }</p>
         </header>
-        <form method="POST" action="QuizLab">
+        <form method="POST" action="QuizLab_jsp">
             <fieldset>
                 <p>Guess the number in the sequence.</p>
-                <p>${q.question(index)}</p>
+                <p>${ q.question(index) }</p>
                 <p>
                     Your answer: <input type="text" name="answer" id="answer">
+                    <input type="button" value="Hint">
                 </p>
                 <input type="submit" value="Submit">
                 <p>${ wrongAnswer }</p>
