@@ -26,27 +26,28 @@ function bling() {
 
 function pigLatin() {
     var words = document.getElementById("txt").value.split(" ");
-    var newWords;
+    var newStr = "";
     words.forEach(word => {
         if (word.charAt(0).match('^[aieouAIEOU].*')) {
             word = word + "ay";
         } else {
-            var con = word.charAt(0);
-            word = word.substr(1);
-            word = word + con;
+            var con = word.toLowerCase().charAt(0);
+            word = word.substr(1) + con + "ay";
         }
-        newWords.add(word);
+        newStr += word.charAt(0).toUpperCase() + word.slice(1) + " ";
     });
-
-    document.getElementById("txt").value = newWords;
+    document.getElementById("txt").value = newStr;
 }
 
-function malkovitch() {    
+function malkovitch() {
     var words = document.getElementById("txt").value.split(" ");
+    var newStr = "";
     for (let index = 0; index < words.length; index++) {
-        const word = words[index];
-        if (word.length > 5)
-            word = "Malkovitch";
+        var word = words[index];
+        if (word.length >= 5){
+             word = "Malkovitch";
+        }
+        newStr += word + " ";       
     }
-    document.getElementById("txt").value = words;
+    document.getElementById("txt").value = newStr;
 }
