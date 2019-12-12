@@ -7,35 +7,34 @@
     const size = document.getElementById("size");
     const speed = document.getElementById("speed");
 
-    let selectedSpeed = 2500;
-    let interval = null;
-
-    // Helper functions
-    let view = function (view) {
-        viewer.value = view;
-    }
+    let selectedSpeed = 250;
+    let animate = function (frames) { return setTimeout(runAnime, selectedSpeed, frames, 0) };
+    let handle = null;
 
     // Handlers
     start.onclick = function () {
         debugger;
         let selectedAnime = ANIMATIONS[animation.options[animation.selectedIndex].value];
         let frames = selectedAnime.split("=====\n");
-        for (let index = 0; index < frames.length; index++) {
-            view(frames[index]);
-            interval = setInterval(view, selectedSpeed)
-            if (index == frames.length - 1)
-                index = 0;
+        animate(frames);
+    }
+
+    function runAnime(frames, index) {
+        if (index < frames.length) {
+            viewer.value = frames[index];
+        } else {
+            index = -1;
         }
-        
+        handle = setTimeout(runAnime, selectedSpeed, frames, ++index)
     }
 
     stop.onclick = function () {
-        clearInterval(interval);
+        clearTimeout(handle);
     }
 
     animation.onchange = function () {
-        debugger;
-        viewer.value = ANIMATIONS[animation.options[animation.selectedIndex].value].split("=====")[0];
+        clearTimeout(handle);
+        viewer.value = ANIMATIONS[animation.options[animation.selectedIndex].value].split("=====\n")[0];
     }
 
     size.onchange = function () {
