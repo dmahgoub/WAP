@@ -20,15 +20,34 @@
         <div class="controls">
             <fieldset>
                 <legend>Play Controls</legend>
+                <button name="start" id="start">Start</button>
+                <button name="stop" id="stop">Stop</button>
             </fieldset>
             <fieldset>
                 <legend>Animation</legend>
+                <select name="animation" id="animation">
+                    <option value="blank">Blank</option>
+                    <option value="exercise">Exercise</option>
+                    <option value="juggler">Juggler</option>
+                    <option value="bike">Bike</option>
+                    <option value="dive">Dive</option>
+                    <option value="custom">Custom</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Size</legend>
+                <select name="size" id="size">
+                    <option value="7pt">Tiny</option>
+                    <option value="10pt">Small</option>
+                    <option value="12pt" selected>Medium</option>
+                    <option value="16pt">Large</option>
+                    <option value="24pt">Extra Large</option>
+                    <option value="32pt">XXL</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Speed</legend>
+                <input type="checkbox" name="speed" id="speed"> Trubo
             </fieldset>
         </div>
     </div>
@@ -39,7 +58,12 @@
         <a href="https://webster.cs.washington.edu/validate-css.php">
             <img src="http://mumstudents.org/cs472/2014-09/images/w3c-css.png" alt="Valid CSS" />
         </a>
+        <!-- <a href="https://webster.cs.washington.edu/jslint/?referer">
+            <img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS" />
+        </a> -->
     </footer>
+    <script src="animations.js"></script>
+    <script src="ascii.js"></script>
 </body>
 
 </html>
