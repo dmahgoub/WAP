@@ -8,6 +8,7 @@ let addjQuery = (function () {
 })();
 window.onload = function () {
 
+
     let coordinates = [];
 
     // Initializing puzzle
@@ -32,30 +33,28 @@ window.onload = function () {
 
     init();
 
-    function shuffle() {
-        // $("#puzzlearea div").each(function (i) {
-        //     // calculate x and y for this piece
-
-        //     let x = ((i % 4) * 100);
-        //     let y = (Math.floor(i / 4) * 100);
-        //     // set basic style and background
-        //     $(this).addClass('puzzlepiece');
-        //     $(this).css('left', x + 'px');
-        //     $(this).css('top', y + 'px');
-        //     $(this).css('background-image', 'url("background.jpg")');
-        //     $(this).css('background-position', -x + 'px ' + (-y) + 'px');
-        //     // store x and y for later
-        //     $(this).x = x;
-        //     $(this).y = y;
-        //     let coordinate = { x: x, y: y }
-        //     coordinates.push(coordinate);
-        // });
+    function shuffle(array) {
+        var i = array.length;
+        if (i === 0) {
+            return false;
+        }
+        while (--i) {
+            var j = Math.floor(Math.random() * (i + 1)),
+                tempi = array[i],
+                tempj = array[j];
+            array[i] = tempj;
+            array[j] = tempi;
+        }
     }
 
 
     // Event Handlers
     $("#shufflebutton").click(function () {
-        shuffle();
+        debugger;
+        shuffle($("#puzzlearea div"));
+        // $("#puzzlearea div").each(function(i){
+            
+        // })
     });
 
     $("#puzzlearea div").hover(function () {
