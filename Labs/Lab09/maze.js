@@ -26,4 +26,4 @@ window.onload = function () {
         $("#maze").mouseleave(red),
         $("#end").mouseover(end)
     );
-}
+} 
