@@ -1,4 +1,4 @@
-(function () {
+window.onload = function () {
     let reset = function () {
         $(this).data('clicked', true);
         $(".boundary").removeClass('youlose');
@@ -26,4 +26,4 @@
         $("#maze").mouseleave(red),
         $("#end").mouseover(end)
     );
-})();
+}
