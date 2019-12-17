@@ -33,17 +33,6 @@ window.onload = function () {
         });
     };
 
-    let winGame = function () {
-        debugger;
-        let flag = true;
-        $(divs).each(function (i) {
-            if (i != $(this).attr('id')) {
-                flag = false;
-            }
-        });
-        return flag;
-    }
-
     ////////////////////////////////////////// Helper Methods //////////////////////////////////////////
     let getPosition = function (i) {
         return {
@@ -101,9 +90,20 @@ window.onload = function () {
             emptySpace = id;
             updatePuzzle();
         }
-        if (winGame()){
+        if (gameWon()){
             $('h1').append('<p class="win"> You Win!</p>');
         }
+    }
+
+    let gameWon = function () {
+        debugger;
+        let flag = true;
+        $(divs).each(function (i) {
+            if (i != $(this).attr('id')) {
+                flag = false;
+            }
+        });
+        return flag;
     }
 
     ////////////////////////////////////////// Event Handlers //////////////////////////////////////////
