@@ -1,26 +1,71 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP Dictionary</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="Style/dict.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/dict.js" type="text/javascript"></script>
-    <title>WAP Dictionary</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
     <header>
-        <div ></div>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        WAP Dictionary
+                    </h1>
+                    <h2 class="subtitle">
+                        Dalia Hany
+                    </h2>
+                </div>
+            </div>
+        </section>
     </header>
-    <form action=""></form>
-    <footer></footer>
+    <div class="body">
+        <form id="form">
+            <label for="lookup">
+                <input class="input is-rounded search-box" type="text" placeholder="Word..." name="search" id="search"
+                    required />
+            </label>
+            <input class="button is-primary is-rounded" type="submit" value="Lookup" />
+        </form>
+
+        <div class="table-container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <!-- Your table content -->
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>Word Type</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody id="definitions">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <footer>
+        <a href="http://validator.w3.org/check/referer"
+            onclick="this.href='http://validator.w3.org/check?uri=https://dmahgoub.github.io/WAP/Homeworks/HW01/'"
+            rel="nofollow" title="Validate as HTML5">
+            <img src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png" alt="html validator" />
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"
+            onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=https://dmahgoub.github.io/WAP/Homeworks/HW01/'"
+            rel="nofollow" title="Validate as CSS">
+            <img src="http://mumstudents.org/cs472/2014-09/images/w3c-css.png" alt="css validator" />
+        </a>
+    </footer>
+    <script src="./Scripts/dict.js" type="text/javascript"></script>
 </body>
 
 </html>

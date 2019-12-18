@@ -1,0 +1,13 @@
+.search-box {
+    width: 400px;
+}
+
+footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#form {
+    padding: 2%;
+}
